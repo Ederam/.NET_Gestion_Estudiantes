@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ER-DEV\\.Net\\Test\\GestionEstudiantes\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C8CFB-E06B-4EA2-B638-0CD79CAC1FE2}|GestionEstudiantes\\GestionEstudiantes.csproj|d:\\er-dev\\.net\\test\\gestionestudiantes\\gestionestudiantes\\views\\estudiante\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3C8CFB-E06B-4EA2-B638-0CD79CAC1FE2}|GestionEstudiantes\\GestionEstudiantes.csproj|solutionrelative:gestionestudiantes\\views\\estudiante\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C8CFB-E06B-4EA2-B638-0CD79CAC1FE2}|GestionEstudiantes\\GestionEstudiantes.csproj|d:\\er-dev\\.net\\test\\gestionestudiantes\\gestionestudiantes\\controllers\\estudiantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C8CFB-E06B-4EA2-B638-0CD79CAC1FE2}|GestionEstudiantes\\GestionEstudiantes.csproj|solutionrelative:gestionestudiantes\\controllers\\estudiantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3C8CFB-E06B-4EA2-B638-0CD79CAC1FE2}|GestionEstudiantes\\GestionEstudiantes.csproj|d:\\er-dev\\.net\\test\\gestionestudiantes\\gestionestudiantes\\models\\estudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3C8CFB-E06B-4EA2-B638-0CD79CAC1FE2}|GestionEstudiantes\\GestionEstudiantes.csproj|solutionrelative:gestionestudiantes\\models\\estudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ER-DEV\\.Net\\Test\\GestionEstudiantes\\GestionEstudiantes\\Views\\Estudiante\\Index.cshtml",
+              "RelativeDocumentMoniker": "GestionEstudiantes\\Views\\Estudiante\\Index.cshtml",
+              "ToolTip": "D:\\ER-DEV\\.Net\\Test\\GestionEstudiantes\\GestionEstudiantes\\Views\\Estudiante\\Index.cshtml",
+              "RelativeToolTip": "GestionEstudiantes\\Views\\Estudiante\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-21T23:15:03.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EstudianteController.cs",
+              "DocumentMoniker": "D:\\ER-DEV\\.Net\\Test\\GestionEstudiantes\\GestionEstudiantes\\Controllers\\EstudianteController.cs",
+              "RelativeDocumentMoniker": "GestionEstudiantes\\Controllers\\EstudianteController.cs",
+              "ToolTip": "D:\\ER-DEV\\.Net\\Test\\GestionEstudiantes\\GestionEstudiantes\\Controllers\\EstudianteController.cs",
+              "RelativeToolTip": "GestionEstudiantes\\Controllers\\EstudianteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T22:56:46.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ESTUDIANTES.cs",
+              "DocumentMoniker": "D:\\ER-DEV\\.Net\\Test\\GestionEstudiantes\\GestionEstudiantes\\Models\\ESTUDIANTES.cs",
+              "RelativeDocumentMoniker": "GestionEstudiantes\\Models\\ESTUDIANTES.cs",
+              "ToolTip": "D:\\ER-DEV\\.Net\\Test\\GestionEstudiantes\\GestionEstudiantes\\Models\\ESTUDIANTES.cs",
+              "RelativeToolTip": "GestionEstudiantes\\Models\\ESTUDIANTES.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T22:48:31.252Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GESTION_ESTUDIANTESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLASES">
+          <Key>
+            <PropertyRef Name="ID_CLASE" />
+          </Key>
+          <Property Name="ID_CLASE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_MATERIA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+          <Property Name="HORARIO" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ESTUDIANTES">
+          <Key>
+            <PropertyRef Name="ID_ESTUDIANTE" />
+          </Key>
+          <Property Name="ID_ESTUDIANTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_CLASE" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MATERIAS">
+          <Key>
+            <PropertyRef Name="ID_MATERIA" />
+          </Key>
+          <Property Name="ID_MATERIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+          <Property Name="CREDITOS" Type="int" />
+        </EntityType>
+        <EntityType Name="PROFESORES">
+          <Key>
+            <PropertyRef Name="ID_PROFESOR" />
+          </Key>
+          <Property Name="ID_PROFESOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_MATERIA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_CLASE_MATERIA">
+          <End Role="MATERIAS" Type="Self.MATERIAS" Multiplicity="1" />
+          <End Role="CLASES" Type="Self.CLASES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATERIAS">
+              <PropertyRef Name="ID_MATERIA" />
+            </Principal>
+            <Dependent Role="CLASES">
+              <PropertyRef Name="ID_MATERIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ESTUDIANTE_CLASE">
+          <End Role="CLASES" Type="Self.CLASES" Multiplicity="1" />
+          <End Role="ESTUDIANTES" Type="Self.ESTUDIANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASES">
+              <PropertyRef Name="ID_CLASE" />
+            </Principal>
+            <Dependent Role="ESTUDIANTES">
+              <PropertyRef Name="ID_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROFESOR_MATERIA">
+          <End Role="MATERIAS" Type="Self.MATERIAS" Multiplicity="1" />
+          <End Role="PROFESORES" Type="Self.PROFESORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATERIAS">
+              <PropertyRef Name="ID_MATERIA" />
+            </Principal>
+            <Dependent Role="PROFESORES">
+              <PropertyRef Name="ID_MATERIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GESTION_ESTUDIANTESModelStoreContainer">
+          <EntitySet Name="CLASES" EntityType="Self.CLASES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESTUDIANTES" EntityType="Self.ESTUDIANTES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MATERIAS" EntityType="Self.MATERIAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROFESORES" EntityType="Self.PROFESORES" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CLASE_MATERIA" Association="Self.FK_CLASE_MATERIA">
+            <End Role="MATERIAS" EntitySet="MATERIAS" />
+            <End Role="CLASES" EntitySet="CLASES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ESTUDIANTE_CLASE" Association="Self.FK_ESTUDIANTE_CLASE">
+            <End Role="CLASES" EntitySet="CLASES" />
+            <End Role="ESTUDIANTES" EntitySet="ESTUDIANTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROFESOR_MATERIA" Association="Self.FK_PROFESOR_MATERIA">
+            <End Role="MATERIAS" EntitySet="MATERIAS" />
+            <End Role="PROFESORES" EntitySet="PROFESORES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GESTION_ESTUDIANTESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DbModels" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="CLASES" EntityType="GESTION_ESTUDIANTESModel.CLASES" />
+          <EntitySet Name="ESTUDIANTES" EntityType="GESTION_ESTUDIANTESModel.ESTUDIANTES" />
+          <EntitySet Name="MATERIAS" EntityType="GESTION_ESTUDIANTESModel.MATERIAS" />
+          <EntitySet Name="PROFESORES" EntityType="GESTION_ESTUDIANTESModel.PROFESORES" />
+          <AssociationSet Name="FK_CLASE_MATERIA" Association="GESTION_ESTUDIANTESModel.FK_CLASE_MATERIA">
+            <End Role="MATERIAS" EntitySet="MATERIAS" />
+            <End Role="CLASES" EntitySet="CLASES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ESTUDIANTE_CLASE" Association="GESTION_ESTUDIANTESModel.FK_ESTUDIANTE_CLASE">
+            <End Role="CLASES" EntitySet="CLASES" />
+            <End Role="ESTUDIANTES" EntitySet="ESTUDIANTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROFESOR_MATERIA" Association="GESTION_ESTUDIANTESModel.FK_PROFESOR_MATERIA">
+            <End Role="MATERIAS" EntitySet="MATERIAS" />
+            <End Role="PROFESORES" EntitySet="PROFESORES" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CLASES">
+          <Key>
+            <PropertyRef Name="ID_CLASE" />
+          </Key>
+          <Property Name="ID_CLASE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_MATERIA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HORARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MATERIAS" Relationship="GESTION_ESTUDIANTESModel.FK_CLASE_MATERIA" FromRole="CLASES" ToRole="MATERIAS" />
+          <NavigationProperty Name="ESTUDIANTES" Relationship="GESTION_ESTUDIANTESModel.FK_ESTUDIANTE_CLASE" FromRole="CLASES" ToRole="ESTUDIANTES" />
+        </EntityType>
+        <EntityType Name="ESTUDIANTES">
+          <Key>
+            <PropertyRef Name="ID_ESTUDIANTE" />
+          </Key>
+          <Property Name="ID_ESTUDIANTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_CLASE" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLASES" Relationship="GESTION_ESTUDIANTESModel.FK_ESTUDIANTE_CLASE" FromRole="ESTUDIANTES" ToRole="CLASES" />
+        </EntityType>
+        <EntityType Name="MATERIAS">
+          <Key>
+            <PropertyRef Name="ID_MATERIA" />
+          </Key>
+          <Property Name="ID_MATERIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CREDITOS" Type="Int32" />
+          <NavigationProperty Name="CLASES" Relationship="GESTION_ESTUDIANTESModel.FK_CLASE_MATERIA" FromRole="MATERIAS" ToRole="CLASES" />
+          <NavigationProperty Name="PROFESORES" Relationship="GESTION_ESTUDIANTESModel.FK_PROFESOR_MATERIA" FromRole="MATERIAS" ToRole="PROFESORES" />
+        </EntityType>
+        <EntityType Name="PROFESORES">
+          <Key>
+            <PropertyRef Name="ID_PROFESOR" />
+          </Key>
+          <Property Name="ID_PROFESOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_MATERIA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MATERIAS" Relationship="GESTION_ESTUDIANTESModel.FK_PROFESOR_MATERIA" FromRole="PROFESORES" ToRole="MATERIAS" />
+        </EntityType>
+        <Association Name="FK_CLASE_MATERIA">
+          <End Type="GESTION_ESTUDIANTESModel.MATERIAS" Role="MATERIAS" Multiplicity="1" />
+          <End Type="GESTION_ESTUDIANTESModel.CLASES" Role="CLASES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATERIAS">
+              <PropertyRef Name="ID_MATERIA" />
+            </Principal>
+            <Dependent Role="CLASES">
+              <PropertyRef Name="ID_MATERIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ESTUDIANTE_CLASE">
+          <End Type="GESTION_ESTUDIANTESModel.CLASES" Role="CLASES" Multiplicity="1" />
+          <End Type="GESTION_ESTUDIANTESModel.ESTUDIANTES" Role="ESTUDIANTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASES">
+              <PropertyRef Name="ID_CLASE" />
+            </Principal>
+            <Dependent Role="ESTUDIANTES">
+              <PropertyRef Name="ID_CLASE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROFESOR_MATERIA">
+          <End Type="GESTION_ESTUDIANTESModel.MATERIAS" Role="MATERIAS" Multiplicity="1" />
+          <End Type="GESTION_ESTUDIANTESModel.PROFESORES" Role="PROFESORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATERIAS">
+              <PropertyRef Name="ID_MATERIA" />
+            </Principal>
+            <Dependent Role="PROFESORES">
+              <PropertyRef Name="ID_MATERIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GESTION_ESTUDIANTESModelStoreContainer" CdmEntityContainer="DbModels" >
+          <EntitySetMapping Name="CLASES">
+            <EntityTypeMapping TypeName="GESTION_ESTUDIANTESModel.CLASES">
+              <MappingFragment StoreEntitySet="CLASES">
+                <ScalarProperty Name="HORARIO" ColumnName="HORARIO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_MATERIA" ColumnName="ID_MATERIA" />
+                <ScalarProperty Name="ID_CLASE" ColumnName="ID_CLASE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTUDIANTES">
+            <EntityTypeMapping TypeName="GESTION_ESTUDIANTESModel.ESTUDIANTES">
+              <MappingFragment StoreEntitySet="ESTUDIANTES">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_CLASE" ColumnName="ID_CLASE" />
+                <ScalarProperty Name="ID_ESTUDIANTE" ColumnName="ID_ESTUDIANTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MATERIAS">
+            <EntityTypeMapping TypeName="GESTION_ESTUDIANTESModel.MATERIAS">
+              <MappingFragment StoreEntitySet="MATERIAS">
+                <ScalarProperty Name="CREDITOS" ColumnName="CREDITOS" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_MATERIA" ColumnName="ID_MATERIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROFESORES">
+            <EntityTypeMapping TypeName="GESTION_ESTUDIANTESModel.PROFESORES">
+              <MappingFragment StoreEntitySet="PROFESORES">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_MATERIA" ColumnName="ID_MATERIA" />
+                <ScalarProperty Name="ID_PROFESOR" ColumnName="ID_PROFESOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
